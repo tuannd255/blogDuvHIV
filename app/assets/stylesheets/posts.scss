@@ -1,3 +1,215 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.post-box {
+	margin-top: 20px;
+	width: 100%;
+	border-bottom: 1px solid #f2f2f2;
+	word-wrap: break-word;
+	padding-bottom: 20px;
+
+	.header {
+		width: 100%;
+		height: 300px;
+
+		.image-post-link:hover .image-post {
+			box-shadow: 2px 2px 3px 2px #dfdfdf;
+		}
+
+		.image-post {
+			width: 100%;
+			height: 100%;
+		}
+
+		.title-post {
+			position: relative;
+			bottom: 30px;
+			left: 30px;
+			width: 70%;
+			margin: 0 auto;
+			float: left;
+			z-index: 1;
+			background: #222;
+			padding: 5px 10px;
+
+			h2 {
+				font-family: "Gabriela script=all rev=2";
+				line-height: 37px;
+				font-size: 28px;
+				font-weight: 400;
+				color: #2e2e2e;
+				color: white;
+				margin: 8px 0;
+				display: block;
+				text-align: left;
+			}
+		}
+	}
+
+	.body {
+		.information {
+			height: 80px;
+			display: inline;
+			position: relative;
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				right: 0;
+				margin-left: auto;
+				margin-right: auto;
+				width: 12%;
+				height: 2px;
+				background-color: #343434;
+			}
+
+			i {
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+
+			.comment {
+				text-decoration: none;
+				color: black;
+			}
+
+			.comment i {
+				color: black;
+			}
+		}
+
+		.content {
+			margin-top: 10px;
+			background-color: white;
+			text-align: justify;
+			font: 16px;
+			line-height: 31px;
+			color: #919191;
+			font-family: 'Open Sans', sans-serif;
+		}
+	}
+
+	.footer {
+		display: inline-block;
+		width: 100%;
+		margin-top: 10px;
+
+		.read-more {
+			float: right;
+			border: 1px solid black;
+			padding: 0;
+			height: 35px;
+			line-height: 32px;
+
+			a {
+				font-size: 12;
+				text-transform: uppercase;
+				color: black;
+				text-decoration: none;
+				padding: 0 15px;
+			}
+		}
+
+		.category {
+			float: left;
+			word-spacing: 5px;
+
+			i {
+				margin-right: 20px;
+			}
+		}
+	}
+}
+
+.show-post {
+	h3.title {
+		text-align: center;
+	}
+
+	.image-post {
+		min-height: 300px;
+		max-height: 600px;
+		width: 100%;
+		margin: 40px;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.content {
+		line-height: 2;
+		font-size: 14px;
+		font-family: 'Open Sans', sans-serif;
+		text-align: justify;
+		margin-bottom: 10px;
+	}
+
+	.footer {
+		width: 100%;
+		margin-bottom: 20px;
+
+		.network-social {
+			float: left;
+
+			.item {
+				margin-right: 5px;
+				display: inline-block;
+			}
+
+			.network-item {
+				display: inline-block;
+				padding: 3px 8px;
+
+				i {
+					color: white;
+				}
+			}
+
+			.fb {
+				background-color: #3b5998;
+			}
+
+			.google {
+				background-color: #db4a39;
+			}
+
+			.twitter {
+				background-color: #00acee;
+			}
+		}
+
+		.author {
+			float: right;
+		}
+	}
+
+	.about-me {
+		background-color: #ffbcbc;
+		width: 100%;
+		min-height: 300px;
+		max-height: 600px;
+		margin-bottom: 10px;
+	}
+
+	.recent-post {
+		.post {
+			text-align: center;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+
+			&:hover {
+				color: blue;
+			}
+
+			.image-post-img {
+				width: 100%;
+				height: 160px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
