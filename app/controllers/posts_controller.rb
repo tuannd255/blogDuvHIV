@@ -17,8 +17,9 @@ class PostsController < ApplicationController
 
 	def show
 		@recent_posts = Post.take(3)
-		@comments = @post.comments
+		@comments = Comment.where(post_id: @post.id).hash_tree(limit_depth: 5)
 		@popular_posts = Post.all
+		@comment = @post.comments.new
 	end
 
 	def edit

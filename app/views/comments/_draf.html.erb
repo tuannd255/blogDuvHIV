@@ -1,0 +1,24 @@
+<% unless comment.leaf? %>
+						<% comment.children.each do |sub_comment| %>
+							<div class="sub-comment">
+								<% sub_user = sub_comment.user %>
+								<div class="media">
+					        <div class="media-left">
+					          <a href="#">
+								      <%= image_tag "", class: "media-object avatar-image" %>
+								    </a>
+					        </div>
+					        <div class="media-body">
+					          <h4 class="media-heading">by <%= sub_user.present? ? sub_user.email : "no one" %>
+							      	<small><i><%= sub_comment.created_at %></i></small>
+							      </h4>
+							      <p><%= sub_comment.content %></p>
+
+							      <div class="action action-<%= sub_comment.id %>">
+							      	<%= link_to "Reply", new_comment_path(sub_comment.id), class: "reply-comment reply-comment-#{sub_comment.id}", remote: true %>
+							      </div>
+							    </div>
+					      </div>
+					    </div>
+						<% end %>
+					<% end %>
