@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: %i(edit update destroy)
+	before_action :find_post, only: %i(edit update destroy show)
+
+	def index
+		@posts = Post.all.page(params[:page]).per 10
+		@popular_posts = Post.all
+	end
 
 	def new
 		@post = current_user.posts.new
@@ -8,6 +13,12 @@ class PostsController < ApplicationController
 	def create
 		@post = current_user.posts.build post_params
 		@post.save
+	end
+
+	def show
+		@recent_posts = Post.take(3)
+		@comments = @post.comments
+		@popular_posts = Post.all
 	end
 
 	def edit
