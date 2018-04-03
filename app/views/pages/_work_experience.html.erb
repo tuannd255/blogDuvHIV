@@ -1,0 +1,32 @@
+<div class="work-experience">
+  <div class="title">
+    <%= t "about_me.work_experience.title" %>
+  </div>
+  <div class="timelines">
+    <div class="row">
+      <div class="col-md-12">
+        <% t("about_me.work_experience.works").each do |item| %>
+          <div class="col-md-6">
+            <div class="timeline-box">
+              <div class="header-time">
+                <%= item[:time] %>
+              </div>
+
+              <div class="header-name">
+                <%= link_to item[:company_name], item[:company_link] %>
+              </div>
+
+              <div class="header-job">
+                <%= item[:job] %>
+              </div>
+
+              <div class="timeline-content">
+                <%= item[:content] %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

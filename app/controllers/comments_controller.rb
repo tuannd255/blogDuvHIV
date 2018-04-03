@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 	def new
 		@parent = Comment.find_by id: params[:parent_id]
     @comment = Comment.new(parent_id: params[:parent_id])
+    @comments = Comment.where(post_id: params[:post_id]).hash_tree(limit_depth: 5)
 	end
 
 	def create
@@ -11,7 +12,16 @@ class CommentsController < ApplicationController
 		else
 			@comment = current_user.comments.build comment_params.except(:parent_id)
 		end
-		@comment.save if @comment
+
+		if @comment && @comment.save
+			@comments = Comment.where(post_id: @comment.post.id).hash_tree(limit_depth: 5)
+			respond_to do |f|
+				f.js
+				f.html
+			end
+		else
+
+		end
 	end
 
 	private

@@ -1,4 +1,7 @@
 en:
+  introduce:
+    yourself: "Hello everybody. I'm Ha Van Duc. I'm a IOS developer and have ~10 month training Web developer with Rails framework. Now, I'm working in Framgia Inc with role is IOS developer. I often review again my code rails for keep mindset for code web application. Now and later, I will develop for this Blog, which share information and ios and rails's skill for everyone. I hope this blog help for you. Thanks so much!"
+
   posts:
     edit:
       title: "Edit post %{post_title}"
@@ -6,6 +9,73 @@ en:
     new:
       title: "Create new post"
       button_text: "Create post"
+
+  about_me:
+    hello: "Hello"
+    age: "Age"
+    address: "Address"
+    email: "E-mail"
+    phone: "Phone"
+    freelance: "Freelance"
+    available: "Available"
+    job: "IOS and Rails Developer"
+    professional:
+      title: "Professional Skills"
+      rails: "Rails"
+      ios: "IOS"
+      css: "CSS"
+      js: "Javascrip"
+      react: "React-JS"
+      other: "Cut the wind"
+    work_experience:
+      title: "Work experience"
+      works:
+        - time: "01/2016-06/2016"
+          company_name: "Sunnet company"
+          company_link: "http://sunnet.vn/"
+          job: "Intern android developer"
+          content: "I've been practicing for 5 months on the Sunnet as an Android developer. But I was busy at University so I stopped practicing at Sunnet."
+
+        - time: "9/2016-7/2017"
+          company_name: "Framgia INC"
+          company_link: "http://recruit.framgia.vn/"
+          job: "Intern Rails application developer"
+          content: "Until September - 2016, I had an industrial practice at an industrial HUST university at the FRAMGIA INC in the Rails. After 3 months of unpaid internship according to the training program, I was awarded a contract with the framgia in Intern Rails. During that time, I continued to practice and learn about web programming with Rails framework."
+
+        - time: "7/2017-9/2017"
+          company_name: "Framgia INC"
+          company_link: "http://recruit.framgia.vn/"
+          job: "Try the placement IOS"
+          content: "Until September-2017, I passed the interview and tried the Framgia.Inc. But during that time, I was transferred to IOS training for the company. And since then after 2 month try work, I signed a formal contract and working in Framgia Inc in IOS developer."
+
+        - time: "26/9/2017-Now"
+          company_name: "Framgia INC"
+          company_link: "http://recruit.framgia.vn/"
+          job: "IOS developer"
+          content: "After 2 month try work, I signed a formal contract and working in Framgia Inc in IOS developer."
+    education:
+      title: "Education"
+      schools:
+        - time: "2013-2017"
+          company_name: "HUST"
+          company_link: "https://www.hust.edu.vn/"
+          content: "Learn IT in Ha Noi University Of Science and Technogory. Graduated from college with good!"
+        - time: "2016-Now"
+          company_name: "Framgia INC"
+          company_link: "http://recruit.framgia.vn/"
+          content: "Study and work as well as practice in  Framgia Inc."
+    interests:
+      title: "My Interests"
+      content: "Code is my blood. Code is life. Code is passionate. Code make awesome"
+      gym: "Gym"
+      code: "Code"
+      game: "Game"
+      travel: "Travel with friend"
+      love: "Love"
+      earn_money: "Earn money"
+  sidebar:
+    about_me: "About me"
+    description: "I'm a IOS and Rails developer. 'Study, Learn more, Learn forever' (Lenin)"
 
   date:
     format:

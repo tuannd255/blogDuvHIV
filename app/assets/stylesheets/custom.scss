@@ -6,6 +6,10 @@
 	padding: 0;
 }
 
+body {
+	font-family: 'Baloo Bhaina', cursive;
+}
+
 a {
 	text-decoration: none;
 }
@@ -21,4 +25,20 @@ a {
 		width: auto;
 		height: 100%;
 	}
+}
+
+.fb {
+	background-color: #3b5998;
+}
+
+.google {
+	background-color: #db4a39;
+}
+
+.twitter {
+	background-color: #00acee;
+}
+
+.github {
+	background-color: black;
 }

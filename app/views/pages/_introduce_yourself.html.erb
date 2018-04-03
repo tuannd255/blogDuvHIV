@@ -1,0 +1,66 @@
+<div class="introduce-yourself">
+  <div class="info clearfix">
+    <div class="avatar">
+      <%= image_tag "logo.jpg" %>
+    </div>
+
+    <div class="yourself">
+      <div class="hello">
+        <%= t "about_me.hello" %>
+      </div>
+
+      <p class="name">I'm <span><%= Settings.name_developer %></span></p>
+      <p><%= t "about_me.job" %></p>
+
+
+      <table class="table table-information">
+        <tbody>
+          <tr>
+            <td><%= t "about_me.age" %></td>
+            <td><%= Settings.year_old %></td>
+          </tr>
+          <tr>
+            <td><%= t "about_me.addrees" %></td>
+            <td><%= Settings.address %></td>
+          </tr>
+          <tr>
+            <td><%= t "about_me.email" %></td>
+            <td><%= Settings.email %></td>
+          </tr>
+
+          <tr>
+            <td><%= t "about_me.phone" %></td>
+            <td><%= Settings.phone %></td>
+          </tr>
+
+          <tr>
+            <td><%= t "about_me.frelance" %></td>
+            <td><%= t "about_me.available" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="network-social clearfix">
+    <ul>
+      <%= link_to Settings.fb_link, class: "icon fb" do %>
+        <li>
+          Facebook
+        </li>
+      <% end %>
+
+      <%= link_to Settings.github_link, class: "icon github" do %>
+        <li>
+          Github
+        </li>
+      <% end %>
+
+      <%= link_to "#", class: "icon twitter" do %>
+        <li>
+          twitter
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

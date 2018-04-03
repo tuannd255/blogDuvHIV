@@ -10,6 +10,14 @@ class PagesController < ApplicationController
   def home
   end
 
+  def about
+  end
+
+  def job
+  end
+
+  def contact
+  end
 
   private
   def valid_page?

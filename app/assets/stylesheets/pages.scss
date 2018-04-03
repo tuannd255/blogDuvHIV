@@ -1,3 +1,268 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$greenCL: #26CC63;
+$shadowCL: #dfdfdf;
+
+.introduce-yourself {
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  z-index: 10;
+  box-shadow: 1px 1px 1px 1px $shadowCL;
+
+  .info {
+  }
+
+  .avatar {
+    width: 30%;
+    float: left;
+    padding: 50px 20px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      border: 1px solid $shadowCL;
+    }
+  }
+
+  .yourself {
+    width: 69.999%;
+    float: left;
+    padding: 50px 20px;
+
+    .hello {
+      text-align: center;
+      color: white;
+      border-radius: 5px;
+      padding: 5px 5px;
+      width: 80px;
+      background-color: $greenCL;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 24pt;
+      color: black;
+
+      span {
+        font-size: 30pt;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .network-social {
+    padding: 40px 0;
+    background-color: $greenCL;
+    text-align: center;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: center;
+
+      a.icon {
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-right: 10px;
+        color: white;
+        min-width: 40px;
+        text-transform: uppercase;
+      }
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.introduce-yourself-text {
+  margin: 20px 0;
+  text-align: center;
+  line-height: 1.5;
+  color: black;
+  font-size: 14pt;
+}
+
+.professional-skill {
+  margin-bottom: 20px;
+
+  .title {
+    font-size: 32pt;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar-box {
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px $shadowCL;
+    width: 100%;
+    padding: 30px 0px 10px 0;
+    clear: both;
+  }
+}
+
+.work-experience {
+  .title {
+    font-size: 32pt;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .timelines {
+    padding: 10px 0;
+    margin-top: 20px;
+
+  }
+
+  .timeline-box {
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #dfdfdf;
+    border-top: 5px solid $greenCL;;
+    text-align: center;
+    padding: 40px 30px;
+    margin-bottom: 20px;
+
+    .header-time {
+      color: $greenCL;;
+      font-weight: 500;
+      font-size: 14pt;
+      margin-bottom: 10px;
+    }
+
+    .header-name {
+      text-transform: uppercase;
+      font-weight: 500;
+      color: black;
+      font-size: 16pt;
+      margin-bottom: 10px;
+    }
+
+    .header-job {
+      text-transform: uppercase;
+      font-weight: 200;
+      color: black;
+      font-size: 12pt;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content {
+      color: black;
+      font-size: 13pt;
+      line-height: 1.3;
+      text-align: justify;
+    }
+  }
+}
+
+
+.education {
+  .title {
+    font-size: 32pt;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .timelines {
+    padding: 10px 0;
+    margin-top: 20px;
+
+  }
+
+  .timeline-box {
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #dfdfdf;
+    border-top: 5px solid $greenCL;;
+    text-align: left;
+    padding: 40px 30px;
+    margin-bottom: 20px;
+
+    .header-time {
+      color: white;
+      background-color: $greenCL;;
+      font-size: 14pt;
+      padding: 10px 5px;
+      width: 120px;
+      text-align: center;
+      margin-bottom: 10px;
+      border-radius: 3px;
+    }
+
+    .header-name {
+      text-transform: uppercase;
+      font-weight: 500;
+      color: black;
+      font-size: 18pt;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content {
+      color: black;
+      font-size: 13pt;
+      line-height: 1.3;
+      text-align: justify;
+    }
+  }
+}
+
+.my_interests {
+  .title {
+    font-size: 32pt;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    text-align: center;
+    font-size: 12pt;
+    margin-bottom: 20px;
+  }
+
+  .action {
+    ul {
+      list-style: none;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        padding: 10px 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px 1px #dfdfdf;
+        color: white;
+        background-color: #26CC63;
+        min-width: 120px;
+      }
+
+      // .gym {
+      //   background-color: yellow;
+      // }
+
+      // .code {
+      //   background-color: gray;
+      // }
+
+      // .game {
+      //   background-color: red;
+      // }
+
+      // .love {
+      //   background-color: pink;
+      // }
+
+      // .travel {
+      //   background-color: blue;
+      // }
+
+      // .earn_money {
+      //   background-color: green;
+      // }
+    }
+  }
+}

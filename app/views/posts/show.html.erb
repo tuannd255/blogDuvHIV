@@ -58,8 +58,12 @@
 				<div class="number-comments">
 					<h3 class="text-center"><%= @comments.size %> comment</h3>
 				</div>
-				<%= render "comments/comments", comments: @comments %>
+				<div class="render-list-comments">
+					<%= render "comments/comments", comments: @comments %>
+				</div>
+
 				<%= render "comments/form", parent_id: nil, post_id: @post.id, comment: @comment %>
+
 			</div>
 		</div>
 	</div>

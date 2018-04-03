@@ -1,0 +1,18 @@
+<div class="professional-skill">
+  <div class="title">
+    <%= t "about_me.professional.title" %>
+  </div>
+
+  <div class="progress-bar-box">
+    <div class="row">
+      <div class="col-md-12">
+        <%= render "pages/progress_item", color: "danger", percent: 60, title: t("about_me.professional.rails") %>
+        <%= render "pages/progress_item", color: "warning", percent: 70, title: t("about_me.professional.ios") %>
+        <%= render "pages/progress_item", color: "primary", percent: 100, title: t("about_me.professional.other") %>
+        <%= render "pages/progress_item", color: "success", percent: 50, title: t("about_me.professional.css") %>
+        <%= render "pages/progress_item", color: "info", percent: 50, title: t("about_me.professional.js") %>
+        <%= render "pages/progress_item", color: "success", percent: 50, title: t("about_me.professional.react") %>
+      </div>
+    </div>
+  </div>
+</div>

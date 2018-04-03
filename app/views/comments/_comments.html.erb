@@ -16,7 +16,7 @@
 
 		      <% if comment.depth != 4 %>
 			      <div class="action action-<%= comment.id %>">
-			      	<%= link_to "Reply", new_comment_path(comment.id),
+			      	<%= link_to "Reply", new_comment_path(comment.post.id, comment.id),
 			      		class: "reply-comment reply-comment-#{comment.id}", remote: true %>
 			      </div>
 			    <% end %>
