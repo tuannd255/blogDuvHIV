@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "/pages/*page" => "pages#show"
 
   resources :posts
+  resources :comments, except: :new
+  get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
 end

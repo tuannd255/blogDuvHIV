@@ -1,0 +1,2 @@
+$('.action-<%= @parent.id %>').html(
+  '<%= j render "comments/form", comment: @comment, post_id: @parent.post.id, parent_id: @parent.id %>')

@@ -1,0 +1,30 @@
+<div class="list-comments">
+	<% comments.map do |comment, nested_comments| %>
+		<% user = comment.user %>
+		<div class="comment">
+			<div class="media">
+		    <div class="media-left">
+		      <a href="#">
+			      <%= image_tag "", class: "media-object avatar-image" %>
+			    </a>
+		    </div>
+		    <div class="media-body">
+		      <h4 class="media-heading">by <%= user.present? ? user.email : "no one" %>
+		      	<small><i><%= comment.created_at %></i></small>
+		      </h4>
+		      <p><%= comment.content %></p>
+
+		      <% if comment.depth != 4 %>
+			      <div class="action action-<%= comment.id %>">
+			      	<%= link_to "Reply", new_comment_path(comment.id),
+			      		class: "reply-comment reply-comment-#{comment.id}", remote: true %>
+			      </div>
+			    <% end %>
+
+		      <%= render "comments/comments", comments: nested_comments %>
+
+		    </div>
+		  </div>
+		</div>
+	<% end %>
+</div>
