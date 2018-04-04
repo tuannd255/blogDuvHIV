@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :comments, except: :new
-  get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
+  get "/comments/new/(:post_id)/(:parent_id)", to: "comments#new", as: :new_comment
 end

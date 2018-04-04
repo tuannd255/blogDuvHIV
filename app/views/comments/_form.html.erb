@@ -1,4 +1,4 @@
-<%= form_for comment, html: {class: "form-inline"} do |f| %>
+<%= form_for comment, html: {class: "form-inline"}, remote: true do |f| %>
 	<%= f.hidden_field :parent_id, value: parent_id || nil %>
 	<%= f.hidden_field :post_id, value: post_id %>
 	<%= f.hidden_field :user_id, value: current_user.present? ? current_user.id : nil %>
@@ -6,5 +6,5 @@
 		<%= f.text_field :content, class: "form-control input-comment" %>
 	</div>
 
-	<%= f.submit "Comment", class: "btn btn-success" %>
+	<%= f.submit "Comment", class: "btn btn-success button-send-comment" %>
 <% end %>

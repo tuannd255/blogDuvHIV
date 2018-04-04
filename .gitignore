@@ -22,3 +22,7 @@ config/secrets.yml
 /test/*
 /tmp/*
 /vendor/*
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
