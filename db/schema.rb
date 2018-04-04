@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20180401054850) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
     t.string "image_category"
     t.string "name"
     t.datetime "created_at", null: false
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20180401054850) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "author_id"
+    t.integer "category_id"
     t.string "image_post"
     t.text "title"
     t.text "content"

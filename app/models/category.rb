@@ -1,3 +1,7 @@
 class Category < ApplicationRecord
-	has_one :post, dependent: :destroy
+	mount_uploader :image_category, ImageUploader
+
+	has_many :posts, dependent: :destroy
+
+	belongs_to :user
 end
