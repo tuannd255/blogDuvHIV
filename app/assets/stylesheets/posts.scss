@@ -84,7 +84,6 @@
 			font: 16px;
 			line-height: 31px;
 			color: #919191;
-			font-family: 'Open Sans', sans-serif;
 		}
 	}
 
@@ -126,10 +125,8 @@
 	}
 
 	.image-post {
-		min-height: 300px;
-		max-height: 600px;
+		height: 300px;
 		width: 100%;
-		margin: 40px;
 
 		img {
 			width: 100%;
@@ -140,7 +137,6 @@
 	.content {
 		line-height: 2;
 		font-size: 14px;
-		font-family: 'Open Sans', sans-serif;
 		text-align: justify;
 		margin-bottom: 10px;
 	}
