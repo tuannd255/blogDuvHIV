@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+	mount_uploader :image_post, ImageUploader
+
 	has_many :claps, dependent: :destroy
 	has_many :comments, dependent: :destroy
 

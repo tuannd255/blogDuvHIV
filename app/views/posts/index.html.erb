@@ -4,7 +4,7 @@
 			<div class="post-box">
 				<div class="header">
 					<%= link_to post, class: "image-post-link" do %>
-						<%= image_tag post.image_post.to_s, class: "image-post" %>
+						<%= image_tag post.image_post.large.to_s, class: "image-post" %>
 						<div class="title-post">
 							<h2><%= post.title %></h2>
 						</div>
