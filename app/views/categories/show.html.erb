@@ -1,0 +1,39 @@
+<div class="show-category">
+	<div class="main-image">
+		<%= image_tag @category.image_category.to_s %>
+		<div class="category-name">
+			<p class="name"><%= @category.name %></p>
+			<p>
+				Code ios with objective, <= swift 4
+			</p>
+		</div>
+	</div>
+
+	<div class="posts clearfix">
+		<% @posts.each do |post| %>
+			<%= link_to post, class: "post-item" do %>
+				<%= image_tag post.image_post.to_s, class: "image-post" %>
+				<div class="contents">
+					<div class="tags">
+						<ul>
+							<li>rails</li>
+							<li>ios</li>
+						</ul>
+						<div style="clear: both;"></div>
+					</div>
+
+					<div class="post-name">
+						<%= post.title %>
+					</div>
+
+					<div class="infos clearfix">
+						<span class="date"><%= post.created_at %></span> | <span class="author"><%= post.author.email %></span>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+
+		<%= link_to "Load more", "#", class: "btn btn-default load-more" %>
+
+	</div>
+</div>

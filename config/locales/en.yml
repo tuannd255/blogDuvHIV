@@ -9,6 +9,10 @@ en:
     new:
       title: "Create new post"
       button_text: "Create post"
+  categories:
+    new:
+      title: "Create category"
+      button_text: "Create category"
 
   about_me:
     hello: "Hello"
