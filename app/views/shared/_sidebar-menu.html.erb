@@ -47,17 +47,11 @@
 	<div class="tags">
 		<h2 class="title">Tags</h2>
 
-		<div>
-			<%= link_to "abc", "#", class: "tag" %>
-		</div>
-
-		<div>
-			<%= link_to "tag 1", "#", class: "tag" %>
-		</div>
-
-		<div>
-			<%= link_to "tag 2", "#", class: "tag" %>
-		</div>
+		<% tags.each do |tag| %>
+			<div>
+				<%= link_to tag, tag, class: "tag" %>
+			</div>
+		<% end %>
 
 		<div style="clear: both;"></div>
 	</div>

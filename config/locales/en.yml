@@ -80,6 +80,8 @@ en:
   sidebar:
     about_me: "About me"
     description: "I'm a IOS and Rails developer. 'Study, Learn more, Learn forever' (Lenin)"
+  footer:
+    title: "Created by "
 
   date:
     format:

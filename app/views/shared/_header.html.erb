@@ -4,8 +4,9 @@
     <li><a href="/pages/about">Tôi là ai?</a></li>
     <li><a href="#">Bài viết</a>
       <ul class="sub-menu">
-        <li><a href="#">IOS</a></li>
-        <li><a href="#">Rails</a></li>
+        <% categories.each do |category| %>
+          <li class="sub-menu-item"><%= link_to category.name.to_s, category %></li>
+        <% end %>
         </li>
       </ul>
     </li>

@@ -134,11 +134,32 @@
 		}
 	}
 
+	.time {
+		text-align: center;
+		width: 100%;
+		margin-top: 20px;
+		padding-bottom: 5px;
+
+		i.far {
+			margin-right: 10px;
+		}
+	}
+
+	.time::after,  .time::before {
+		content: '';
+		width: 20%;
+		height: 2px;
+		margin: 0 20px;
+		background-color: red;
+		display: inline-block;
+	}
+
 	.content {
 		line-height: 2;
 		font-size: 14px;
 		text-align: justify;
 		margin-bottom: 10px;
+		margin-top: 20px;
 	}
 
 	.footer {

@@ -7,4 +7,12 @@ module ApplicationHelper
 	      page_title + " | " + base_title
 	    end
 	end
+
+  def tags
+    Tag.all
+  end
+
+  def categories
+    Category.all
+  end
 end

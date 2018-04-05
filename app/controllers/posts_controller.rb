@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 	def index
 		@posts = Post.all.page(params[:page]).per 10
 		@popular_posts = Post.all
+		@tags = Tag.all
 	end
 
 	def new
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit :image_post, :title, :content
+		params.require(:post).permit :image_post, :title, :content, :tag_list
 	end
 
 	def find_post
