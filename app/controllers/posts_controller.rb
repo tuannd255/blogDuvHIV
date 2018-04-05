@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 		@comments = Comment.where(post_id: @post.id).hash_tree(limit_depth: 5)
 		@popular_posts = Post.all
 		@comment = @post.comments.new
+		@clap = current_user.claps.find_or_initialize_by post_id: @post.id
 	end
 
 	def edit
