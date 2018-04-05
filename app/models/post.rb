@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  acts_as_taggable
+
 	mount_uploader :image_post, ImageUploader
 
 	has_many :claps, dependent: :destroy
@@ -6,4 +8,8 @@ class Post < ApplicationRecord
 
 	belongs_to :category, optional: true
 	belongs_to :author, foreign_key: :author_id, class_name: "User", optional: true
+
+  scope :tagged_with, -> (name) {
+    joins(:tags).where("tags.name LIKE ?", name)
+  }
 end

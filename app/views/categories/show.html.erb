@@ -4,7 +4,7 @@
 		<div class="category-name">
 			<p class="name"><%= @category.name %></p>
 			<p>
-				Code ios with objective, <= swift 4
+				<%= @category.description.blank? ? "Code, code more, code forever!" : @category.description %>
 			</p>
 		</div>
 	</div>
@@ -16,8 +16,9 @@
 				<div class="contents">
 					<div class="tags">
 						<ul>
-							<li>rails</li>
-							<li>ios</li>
+							<% post.tag_list do |tag| %>
+								<li><%= tag.name %></li>
+							<% end %>
 						</ul>
 						<div style="clear: both;"></div>
 					</div>
@@ -27,7 +28,7 @@
 					</div>
 
 					<div class="infos clearfix">
-						<span class="date"><%= post.created_at %></span> | <span class="author"><%= post.author.email %></span>
+						<span class="date"><%= l post.created_at, format: :long %></span> | <span class="author"><%= post.author.email %></span>
 					</div>
 				</div>
 			<% end %>

@@ -36,9 +36,10 @@
 	  display: none;
 	  position: absolute;
 
-	  li {
+	  li.sub-menu-item {
 	  	background-color: black;
 		  margin-left: 0 !important;
+		  text-transform: uppercase;
 
 		  a {
 		  	color: white;

@@ -10,6 +10,10 @@
 				<%= image_tag @post.image_post.large.to_s, class: "image-post-img" %>
 			</div>
 
+			<div class="time">
+				<i class="far fa-clock"></i><i><%= time_ago_in_words @post.created_at %> ago</i>
+			</div>
+
 			<div class="content">
 				<%= @post.content %>
 			</div>
@@ -33,7 +37,7 @@
 				</div>
 
 				<div class="author">
-					-by <%= @post.author.email.to_s %>
+					by <%= @post.author.email.to_s %>
 				</div>
 			</div>
 
