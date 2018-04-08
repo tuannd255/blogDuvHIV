@@ -2,14 +2,35 @@ en:
   introduce:
     yourself: "Hello everybody. I'm Ha Van Duc. I'm a IOS developer and have ~10 month training Web developer with Rails framework. Now, I'm working in Framgia Inc with role is IOS developer. I often review again my code rails for keep mindset for code web application. Now and later, I will develop for this Blog, which share information and ios and rails's skill for everyone. I hope this blog help for you. Thanks so much!"
 
+  not_found:
+    category: "Category not found!"
   posts:
+    create:
+      success: "Create post success!"
+      failure: "Create post failure!"
+    update:
+      success: "Update post success!"
+      failure: "Update post failure!"
+    destroy:
+      success: "Destroy post success!"
+      failure: "Destroy post failure!"
     edit:
       title: "Edit post %{post_title}"
       button_text: "Edit post"
     new:
       title: "Create new post"
       button_text: "Create post"
+      select_category: "Let's choose category"
   categories:
+    create:
+      success: "Create category success!"
+      failure: "Create category failure"
+    update:
+      success: "Update category success!"
+      failure: "Update category failure"
+    destroy:
+      success: "Destroy category success!"
+      failure: "Destroy category failure!"
     new:
       title: "Create category"
       button_text: "Create category"
