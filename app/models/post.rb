@@ -12,4 +12,7 @@ class Post < ApplicationRecord
   scope :tagged_with, -> (name) {
     joins(:tags).where("tags.name LIKE ?", name)
   }
+
+  validates :title, presence: true, length: {minimum: 10, maximum: 1000}
+  validates :content, presence: true, length: {minimum: 1}
 end

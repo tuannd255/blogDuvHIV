@@ -1,0 +1,33 @@
+<%= link_to "Create new category", new_category_path, class: "btn btn-success" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td>
+        <%= image_tag category.image_category.to_s,
+          class: "img-circle",
+            style: "width: 50px; height: 50px;" %>
+        </td>
+        <td><%= link_to category.name, category %></td>
+        <td><%= category.description %></td>
+        <td>
+          <%= link_to edit_category_path(category), class: "btn btn-warning" do %>
+            Edit
+          <% end %>
+
+          <%= link_to category_path(category), method: :delete, class: "btn btn-danger" do %>
+            Destroy
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
