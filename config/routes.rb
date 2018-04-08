@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root "posts#index"
   get "/pages/*page" => "pages#show"
 
-  resources :posts
+  resources :posts do
+    resources :claps
+  end
   resources :categories
   resources :comments, except: :new
   resources :tags

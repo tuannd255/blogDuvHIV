@@ -67,7 +67,17 @@
 				</div>
 
 				<%= render "comments/form", parent_id: nil, post_id: @post.id, comment: @comment %>
+			</div>
 
+			<div class="clap">
+				<div class="number-clap" data-clapped="<%= @clap.number_tap %>">
+					<%= @clap.number_tap || 0 %>
+				</div>
+				<div class="form-clap">
+					<% result = get_url_clap post: @post, clap: @clap %>
+					<%= link_to "Clap", "#", remote: true, class: "clap-button",
+						data: {urlPath: result.first, methodAction: result.second} %>
+				</div>
 			</div>
 		</div>
 	</div>

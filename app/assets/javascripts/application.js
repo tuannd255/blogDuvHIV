@@ -49,4 +49,61 @@ $(document).on('turbolinks:load', function() {
 	$('.froalaEditor').froalaEditor({
 		codeMirror: true
 	});
+
+	//Handle button CLAP
+	var numberTap = 0;
+	var url = $('.clap-button').data('urlpath')
+	var method = $('.clap-button').data('methodaction')
+
+	var isUpdate = (method == "PUT")
+	var token = $('meta[name="csrf-token"]').attr('content');
+	var clapped = $('.number-clap').data("clapped")
+
+	$('.clap-button').click(function(e) {
+		if (isUpdate) {
+			numberTap += 1
+			$('.number-clap').html(clapped + numberTap)
+		}
+	})
+
+	$('.clap-button').mouseout(function() {
+		if (numberTap > 0 && isUpdate) {
+			$.ajax({
+				url: url,
+				type: method,
+				headers: {
+			    'X-CSRF-Token': token
+			  },
+				dataType: "json",
+				data: {
+					number_tap: numberTap
+				},
+				success: function(data) {
+					$('.number-clap').html(data["number_tap"])
+				}, error: function(data) {
+					console.log(data)
+				}
+			})
+
+		} else if (!isUpdate) {
+			$.ajax({
+				url: url,
+				type: method,
+				headers: {
+			    'X-CSRF-Token': token
+			  },
+				dataType: "json",
+				data: {
+					number_tap: 1
+				},
+				success: function(data) {
+					location.reload();
+				}, error: function(data) {
+					console.log(data)
+				}
+			})
+		}
+
+		numberTap = 0
+	})
 });
