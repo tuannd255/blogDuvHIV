@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	load_and_authorize_resource
+	skip_authorize_resource only: %i(index show)
 	before_action :find_post, only: %i(edit update destroy show)
 	before_action :find_category, only: %i(create update)
 
@@ -30,7 +32,7 @@ class PostsController < ApplicationController
 		@comments = Comment.where(post_id: @post.id).hash_tree(limit_depth: 5)
 		@popular_posts = Post.take(5)
 		@comment = @post.comments.new
-		@clap = current_user.claps.find_or_initialize_by post_id: @post.id
+		@clap = @post.claps.find_or_initialize_by post_id: @post.id
 	end
 
 	def edit

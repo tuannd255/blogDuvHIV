@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+	load_and_authorize_resource
+	skip_authorize_resource only: %i(index show)
 	before_action :find_category, only: %i(show)
 
 	def index

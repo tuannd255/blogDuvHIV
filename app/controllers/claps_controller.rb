@@ -1,4 +1,5 @@
 class ClapsController < ApplicationController
+  load_and_authorize_resource
   before_action :find_post, only: %i(create update)
   before_action :find_clap, only: %i(update)
 
