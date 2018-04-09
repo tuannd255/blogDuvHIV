@@ -65,8 +65,9 @@
 				<div class="render-list-comments">
 					<%= render "comments/comments", comments: @comments %>
 				</div>
-
-				<%= render "comments/form", parent_id: nil, post_id: @post.id, comment: @comment %>
+				<% if user_signed_in? %>
+					<%= render "comments/form", parent_id: nil, post_id: @post.id, comment: @comment %>
+				<% end %>
 			</div>
 
 			<div class="clap">
@@ -75,8 +76,12 @@
 				</div>
 				<div class="form-clap">
 					<% result = get_url_clap post: @post, clap: @clap %>
-					<%= link_to "Clap", "#", remote: true, class: "clap-button",
-						data: {urlPath: result.first, methodAction: result.second} %>
+					<% if user_signed_in? %>
+						<%= link_to "Clap", "#", remote: true, class: "clap-button",
+							data: {urlPath: result.first, methodAction: result.second} %>
+					<% else %>
+						<%= link_to "Clap", new_user_session_path, class: "clap-button" %>
+					<% end %>
 				</div>
 			</div>
 		</div>

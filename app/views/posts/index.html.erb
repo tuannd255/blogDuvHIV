@@ -15,13 +15,13 @@
 
 				<div class="body">
 					<div class="information">
-						<i class="fa fa-user"></i>
+						<i class="fas fa-user"></i>
 							<%= post.author.email %>
-						<i class="fa fa-calendar-o"></i>
+						<i class="far fa-calendar"></i>
 						<abbr><%= l post.created_at, format: :long %></abbr>
 
 						<%= link_to post, class: "comment" do %>
-							<i class="fa fa-comment"></i> <%= post.comments.size || 0 %>
+							<i class="far fa-comment"></i> <%= post.comments.size || 0 %>
 						<% end %>
 					</div>
 
@@ -32,7 +32,8 @@
 
 				<div class="footer">
 					<div class="category">
-						<i class="fa fa-folder-open-o" aria-hidden="true"></i>Category
+						<i class="fas fa-folder-open"></i>
+						<%= link_to post.category.name, post.category %>
 					</div>
 
 					<div class="read-more">
