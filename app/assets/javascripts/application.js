@@ -108,4 +108,7 @@ $(document).on('turbolinks:load', function() {
 
 		numberTap = 0
 	})
+
+
+	 var simplemde = new SimpleMDE({ element: document.getElementById("markdown") });
 });
