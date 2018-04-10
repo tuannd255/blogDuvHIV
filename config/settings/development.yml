@@ -7,3 +7,8 @@ email: "ha.van.duc@framgia.com OR duchv2307@gmail.com (Primary email)"
 phone: "0986 338 546"
 fb_link: "https://www.facebook.com/nhocbangchu95"
 github_link: "https://github.com/duchv2307"
+
+per_page: 10
+limit_deep: 5
+take_post: 10
+random: 3

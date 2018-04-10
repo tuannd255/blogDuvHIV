@@ -48,8 +48,11 @@
 		<h2 class="title">Tags</h2>
 
 		<% tags.each do |tag| %>
-			<div>
-				<%= link_to tag, tag, class: "tag" %>
+			<div class="tag">
+				<%= link_to tag, class: "tag-link" do %>
+					<%= tag %>
+				<% end %>
+				<div class="number_tag"><%= tag_count_post(tag) %></div>
 			</div>
 		<% end %>
 
