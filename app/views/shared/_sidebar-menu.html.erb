@@ -29,7 +29,7 @@
 		<h2 class="title">Popular posts</h2>
 		<% @popular_posts.each do |post| %>
 			<div class="post">
-				<a href="">
+				<%= link_to post do %>
 					<div class="avatar">
 						<%= image_tag post.image_post.avatar_cricle.to_s %>
 					</div>
@@ -38,7 +38,7 @@
 						<%= post.title %>
 					</div>
 
-				</a>
+				<% end %>
 				<div style="clear: both;"></div>
 			</div>
 		<% end %>
@@ -48,8 +48,11 @@
 		<h2 class="title">Tags</h2>
 
 		<% tags.each do |tag| %>
-			<div>
-				<%= link_to tag, tag, class: "tag" %>
+			<div class="tag">
+				<%= link_to tag, class: "tag-link" do %>
+					<%= tag %>
+				<% end %>
+				<div class="number_tag"><%= tag_count_post(tag) %></div>
 			</div>
 		<% end %>
 

@@ -5,8 +5,8 @@ class PostsController < ApplicationController
 	before_action :find_category, only: %i(create update)
 
 	def index
-		@posts = Post.all.page(params[:page]).per 10
-		@popular_posts = Post.all
+		@posts = Post.all.page(params[:page]).per Settings.per_page
+		@popular_posts = Post.populars
 		@tags = Tag.all
 	end
 
@@ -28,11 +28,11 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@recent_posts = Post.take(3)
-		@comments = Comment.where(post_id: @post.id).hash_tree(limit_depth: 5)
-		@popular_posts = Post.take(5)
+		@recent_posts = Post.random (@post.id)
+		@comments = Comment.where(post_id: @post.id).hash_tree(limit_depth: Settings.limit_deep)
+		@popular_posts = Post.populars
 		@comment = @post.comments.new
-		@clap = @post.claps.find_or_initialize_by post_id: @post.id
+		@clap = @post.claps.find_or_initialize_by post_id: @post.id, user_id: current_user.try(:id)
 	end
 
 	def edit

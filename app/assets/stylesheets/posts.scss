@@ -28,6 +28,7 @@
 			z-index: 1;
 			background: #222;
 			padding: 5px 10px;
+			border-radius: 8px;
 
 			h2 {
 				font-family: "Gabriela script=all rev=2";
@@ -244,6 +245,8 @@
 			z-index: 11;
 			width: 50px;
 			height: 50px;
+			line-height: 50px;
+			text-decoration: none;
 			border-radius: 50%;
 			color: white;
 		}

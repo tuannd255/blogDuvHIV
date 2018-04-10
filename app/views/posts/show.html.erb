@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="content">
-				<%= @post.content %>
+				<%= raw @post.content %>
 			</div>
 
 			<div class="footer clearfix">
@@ -37,7 +37,7 @@
 				</div>
 
 				<div class="author">
-					by <%= @post.author.email.to_s %>
+					by <%= @post.author.try(:email) %>
 				</div>
 			</div>
 
@@ -49,10 +49,10 @@
 				<% @recent_posts.each do |post| %>
 					<div class="col-md-4">
 						<div class="post">
-							<a href="">
+							<%= link_to post do %>
 								<%= image_tag post.image_post.to_s, class: "image-post-img" %>
 								<%= post.title %>
-							</a>
+							<% end %>
 						</div>
 					</div>
 				<% end %>
@@ -71,8 +71,8 @@
 			</div>
 
 			<div class="clap">
-				<div class="number-clap" data-clapped="<%= @clap.number_tap %>">
-					<%= @clap.number_tap || 0 %>
+				<div class="number-clap" data-clapped="<%= @post.number_claps %>">
+					<%= @post.number_claps || 0 %>
 				</div>
 				<div class="form-clap">
 					<% result = get_url_clap post: @post, clap: @clap %>

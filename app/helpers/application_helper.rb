@@ -15,4 +15,8 @@ module ApplicationHelper
   def categories
     Category.all
   end
+
+  def tag_count_post tag
+    Post.joins(:tags).where("tags.id = ?", tag.id).size
+  end
 end

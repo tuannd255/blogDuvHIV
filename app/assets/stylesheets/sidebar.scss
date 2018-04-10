@@ -84,17 +84,31 @@
 			color: black;
 			display: block;
 			float: left;
-			padding: 5px 20px;
 			border-radius: 5px;
 			border: 1px solid #dfdfdf;
 			margin-bottom: 10px;
 			margin-left: 10px;
 
-			&:hover {
+			.number_tag {
+				background-color: #5488c7;
+				width: 30px;
+				text-align: center;
 				color: white;
-				background-color: #9c29f1bf;
-				box-shadow: 1px 1px 1px 1px #dfdfdf;
+				display: inline-block;
+				padding: 10px 0;
 			}
+
+			.tag-link {
+				padding: 10px 0 10px 10px;
+				display: inline-block;
+				text-align: center;
+				text-decoration: none;
+
+				&:hover {
+					color: black;
+				}
+			}
+
 		}
 	}
 }

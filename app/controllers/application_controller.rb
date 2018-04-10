@@ -4,4 +4,9 @@ class ApplicationController < ActionController::Base
   def not_found
 		render file: "public/404.html", status: :not_found
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path
+    flash[:danger] = "You not permission"
+  end
 end

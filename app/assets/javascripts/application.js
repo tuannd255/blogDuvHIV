@@ -79,7 +79,9 @@ $(document).on('turbolinks:load', function() {
 					number_tap: numberTap
 				},
 				success: function(data) {
-					$('.number-clap').html(data["number_tap"])
+					// $('.number-clap').html(data["number_tap"])
+					location.reload();
+					clapped = data["number_tap"]
 				}, error: function(data) {
 					console.log(data)
 				}

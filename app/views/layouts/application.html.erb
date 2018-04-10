@@ -12,14 +12,15 @@
 
   <body>
     <%= render "shared/header" %>
-    <div class="container">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"> <%= message %> </div>
-      <% end %>
-      <%#= render "shared/logo" %>
-    	<%= yield %>
-      <%= render "shared/footer" %>
+    <div class="row">
+      <div class="container">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"> <%= message %> </div>
+        <% end %>
+        <%= yield %>
+      </div>
     </div>
+    <%= render "shared/footer" %>
   </body>
   <div id="fb-root"></div>
   <script>(function(d, s, id) {

@@ -13,6 +13,18 @@ class Post < ApplicationRecord
     joins(:tags).where("tags.name LIKE ?", name)
   }
 
+  scope :populars, -> {
+    joins(:claps).where("claps.number_tap > -1").group("posts.id").take Settings.take_post
+  }
+
+  scope :random, -> (id) {
+    where.not(id: id).sample Settings.random
+  }
+
   validates :title, presence: true, length: {minimum: 10, maximum: 1000}
   validates :content, presence: true, length: {minimum: 1}
+
+  def number_claps
+    claps.sum(:number_tap)
+  end
 end
