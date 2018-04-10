@@ -80,6 +80,7 @@ $(document).on('turbolinks:load', function() {
 				},
 				success: function(data) {
 					$('.number-clap').html(data["number_tap"])
+					clapped = data["number_tap"]
 				}, error: function(data) {
 					console.log(data)
 				}

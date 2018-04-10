@@ -17,6 +17,7 @@ class ClapsController < ApplicationController
 
   def update
     number_tap = @clap.number_tap.to_i + params[:number_tap].to_i
+    number_tap = number_tap >= 200 ? 200 : number_tap
     @clap.update_attributes number_tap: number_tap
     respond_to do |f|
       f.html
