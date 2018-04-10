@@ -58,6 +58,10 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def import
+		Post.import(params[:file])
+	end
+
 	private
 
 	def post_params

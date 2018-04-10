@@ -1,3 +1,9 @@
 <% provide :title, t(".title") %>
 <% provide :button_text, t(".button_text") %>
 <%= render "posts/form" %>
+<h2>Import Products</h2>
+
+<%= form_tag import_posts_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

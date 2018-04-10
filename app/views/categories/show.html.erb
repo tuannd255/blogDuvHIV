@@ -28,7 +28,7 @@
 					</div>
 
 					<div class="infos clearfix">
-						<span class="date"><%= l post.created_at, format: :long %></span> | <span class="author"><%= post.author.email %></span>
+						<span class="date"><%= l post.created_at, format: :long %></span> | <span class="author"><%= post.author.try(:email) %></span>
 					</div>
 				</div>
 			<% end %>

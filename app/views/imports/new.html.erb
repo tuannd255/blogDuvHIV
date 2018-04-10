@@ -1,0 +1,5 @@
+<h4>Import from Excel file</h4>
+<%= form_for @import, multipart: true do |f| %>
+    <%= f.file_field :file %>
+    <%= f.submit "Import", class: "btn btn-success" %>
+<% end %>

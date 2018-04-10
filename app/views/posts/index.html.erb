@@ -16,7 +16,7 @@
 				<div class="body">
 					<div class="information">
 						<i class="fas fa-user"></i>
-							<%= post.author.email %>
+							<%= post.author.try(:email) %>
 						<i class="far fa-calendar"></i>
 						<abbr><%= l post.created_at, format: :long %></abbr>
 
