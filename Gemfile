@@ -48,6 +48,10 @@ gem "mini_magick"
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'cancancan', '~> 2.0'
 
+gem "pygments.rb", "~> 0.6.3"
+gem "redcarpet", "~> 3.3", ">= 3.3.4"
+gem "simplemde-rails"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
