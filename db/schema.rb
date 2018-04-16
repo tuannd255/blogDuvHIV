@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20180409082119) do
     t.integer "user_id"
     t.string "image_category"
     t.string "name"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
   end
 
   create_table "claps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20180409082119) do
     t.text "title"
     t.text "content"
     t.integer "status"
+    t.integer "type_post", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

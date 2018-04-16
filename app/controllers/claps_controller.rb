@@ -33,9 +33,17 @@ class ClapsController < ApplicationController
 
   def find_post
     @post = Post.find_by id: params[:post_id]
+    unless @post
+      redirect_to root_path
+      flash[:danger] = t "not_found.post"
+    end
   end
 
   def find_clap
     @clap = @post.claps.find_by id: params[:id]
+    unless @clap
+      redirect_to root_path
+      flash[:danger] = t "not_found.clap"
+    end
   end
 end

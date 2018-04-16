@@ -1,9 +1,18 @@
 en:
   introduce:
     yourself: "Hello everybody. I'm Ha Van Duc. I'm a IOS developer and have ~10 month training Web developer with Rails framework. Now, I'm working in Framgia Inc with role is IOS developer. I often review again my code rails for keep mindset for code web application. Now and later, I will develop for this Blog, which share information and ios and rails's skill for everyone. I hope this blog help for you. Thanks so much!"
-
+  pages:
+    header:
+      who_i_am: "Who I'm?"
+      post_menu: "Code practice"
+      home: "Home"
+      talk_for_me: "Life story"
+      cooperate: "Co-operate"
   not_found:
     category: "Category not found!"
+    comment: "Comment not found!"
+    post: "Post not found"
+    clap: "Clap not found"
   posts:
     create:
       success: "Create post success!"
@@ -21,6 +30,10 @@ en:
       title: "Create new post"
       button_text: "Create post"
       select_category: "Let's choose category"
+    types:
+      normal: "Code"
+      life_story: "Life story"
+      cooperate: "Cooperate"
   categories:
     create:
       success: "Create category success!"
@@ -34,6 +47,15 @@ en:
     new:
       title: "Create category"
       button_text: "Create category"
+  comments:
+    update:
+      failure: "Update comment failure"
+    destroy:
+      failure: "Destroy comment failure"
+    reply: "Reply"
+    edit: "Edit"
+    destroy: "Delete"
+    confirm: "You want to delete this comment?"
 
   about_me:
     hello: "Hello"

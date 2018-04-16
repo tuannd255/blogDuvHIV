@@ -9,9 +9,10 @@
 			<div class="image-post">
 				<%= image_tag @post.image_post.large.to_s, class: "image-post-img" %>
 			</div>
-
 			<div class="time">
-				<i class="far fa-clock"></i><i><%= time_ago_in_words @post.created_at %> ago</i>
+				<i class="far fa-clock"></i>
+				<i><%= time_ago_in_words @post.created_at %> ago</i>
+				- <%= t "posts.types." + @post.type_post %>
 			</div>
 
 			<div class="content markdown">
@@ -60,7 +61,7 @@
 
 			<div class="comments">
 				<div class="number-comments">
-					<h3 class="text-center"><%= @comments.size %> comment</h3>
+					<h3 class="text-center"><%= @post.comments.size %> comment</h3>
 				</div>
 				<div class="render-list-comments">
 					<%= render "comments/comments", comments: @comments %>

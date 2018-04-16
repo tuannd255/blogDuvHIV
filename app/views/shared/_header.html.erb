@@ -1,8 +1,8 @@
 <div id="menu">
   <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <li><a href="/pages/about">Tôi là ai?</a></li>
-    <li><a href="#">Bài viết</a>
+    <li><%= link_to t("pages.header.home"), root_path %></li>
+    <li><a href="/pages/about"><%= t "pages.header.who_i_am" %></a></li>
+    <li><a href="#"><%= t "pages.header.post_menu" %></a>
       <ul class="sub-menu">
         <% categories.each do |category| %>
           <li class="sub-menu-item"><%= link_to category.name.to_s, category %></li>
@@ -10,8 +10,8 @@
         </li>
       </ul>
     </li>
-    <!-- <li><a href="/pages/job">Công việc</a></li>
-    <li><a href="/pages/contact">Liên hệ</a></li> -->
+    <li><a href="/pages/life_story"><%= t "pages.header.talk_for_me" %></a></li>
+    <li><a href="/pages/cooperate"><%= t "pages.header.cooperate" %></a></li>
   </ul>
 </div>
 

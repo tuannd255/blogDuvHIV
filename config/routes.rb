@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :claps
   end
   resources :categories
-  resources :comments, except: :new
+  resources :comments, only: %i(create edit update destroy)
   resources :tags
   get "/comments/new/(:post_id)/(:parent_id)", to: "comments#new", as: :new_comment
 end

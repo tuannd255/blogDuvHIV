@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-9">
+    <% @posts.each do |post| %>
+      <div class="post-box">
+        <div class="header">
+          <%= link_to post, class: "image-post-link" do %>
+            <%= image_tag post.image_post.large.to_s, class: "image-post" %>
+            <div class="title-post">
+              <h2><%= post.title %></h2>
+            </div>
+          <% end %>
+        </div>
+
+        <div style="clear: both;"></div>
+
+        <div class="body">
+          <div class="information">
+            <i class="fas fa-user"></i>
+              <%= post.author.try(:email) %>
+            <i class="far fa-calendar"></i>
+            <abbr><%= l post.created_at, format: :long %></abbr>
+
+            <%= link_to post, class: "comment" do %>
+              <i class="far fa-comment"></i> <%= post.comments.size || 0 %>
+            <% end %>
+          </div>
+
+          <div class="content">
+            <%= truncate post.content, length: 500 %>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="category">
+            <i class="fas fa-folder-open"></i>
+            <%= link_to post.category.try(:name) || "N/A", post.category %>
+          </div>
+
+          <div class="category">
+            <i class="fas fa-tags"></i>
+            <%= t "posts.types." + post.type_post %>
+          </div>
+
+          <div class="read-more">
+            <%= link_to "Read more", post %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="col-md-offset-4">
+      <%= paginate @posts, theme: 'twitter-bootstrap-3' %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <%= render "shared/sidebar-menu", popular_posts: @popular_posts %>
+  </div>
+</div>

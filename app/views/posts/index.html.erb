@@ -33,7 +33,12 @@
 				<div class="footer">
 					<div class="category">
 						<i class="fas fa-folder-open"></i>
-						<%= link_to post.category.name, post.category %>
+						<%= link_to post.category.try(:name) || "N/A", post.category %>
+					</div>
+
+					<div class="category">
+						<i class="fas fa-tags"></i>
+						<%= t "posts.types." + post.type_post %>
 					</div>
 
 					<div class="read-more">
