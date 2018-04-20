@@ -71,6 +71,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "pry-rails"
   gem "pry-byebug"
+
+  gem 'capistrano'
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
