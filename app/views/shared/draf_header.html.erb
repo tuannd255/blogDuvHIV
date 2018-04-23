@@ -1,0 +1,28 @@
+<div id="menu">
+  <ul>
+    <li><%= link_to t("pages.header.home"), root_path %></li>
+    <li><a href="/pages/about"><%= t "pages.header.who_i_am" %></a></li>
+    <li><a href="#"><%= t "pages.header.post_menu" %></a>
+      <ul class="sub-menu">
+        <% categories.each do |category| %>
+          <li class="sub-menu-item"><%= link_to category.name.to_s, category %></li>
+        <% end %>
+        </li>
+      </ul>
+    </li>
+    <li><a href="/pages/life_story"><%= t "pages.header.talk_for_me" %></a></li>
+    <li><a href="/pages/cooperate"><%= t "pages.header.cooperate" %></a></li>
+
+    <% if user_signed_in? %>
+      <li>
+        <a href="#"><%= current_user.email %></a>
+        <ul class="profile">
+          <li><a href="">Edit profile</a></li>
+        </ul>
+      </li>
+    <% else %>
+      <li><a href="#"><%= t "pages.header.sign_up" %></a> |
+      <a href="#"><%= t "pages.header.sign_in" %></a></li>
+    <% end %>
+  </ul>
+</div>
