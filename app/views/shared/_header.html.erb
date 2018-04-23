@@ -1,17 +1,51 @@
 <div id="menu">
-  <ul>
-    <li><%= link_to t("pages.header.home"), root_path %></li>
-    <li><a href="/pages/about"><%= t "pages.header.who_i_am" %></a></li>
-    <li><a href="#"><%= t "pages.header.post_menu" %></a>
-      <ul class="sub-menu">
-        <% categories.each do |category| %>
-          <li class="sub-menu-item"><%= link_to category.name.to_s, category %></li>
-        <% end %>
+  <nav class="navbar navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="<%= root_path %>"><%= t("pages.header.blog_name") %></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="<%= root_path %>"><%= t("pages.header.home") %></a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <%= t "pages.header.post_menu" %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu sub-mennu">
+            <% categories.each do |category| %>
+              <li><a href="<%= category_path category %>"><%= category.name %></a></li>
+            <% end %>
+          </ul>
         </li>
+        <li><a href="/pages/life_story"><%= t "pages.header.talk_for_me" %></a></li>
+        <li><a href="/pages/cooperate"><%= t "pages.header.cooperate" %></a></li>
       </ul>
-    </li>
-    <li><a href="/pages/life_story"><%= t "pages.header.talk_for_me" %></a></li>
-    <li><a href="/pages/cooperate"><%= t "pages.header.cooperate" %></a></li>
-  </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <%= image_tag "logo", class: "image-profile" %>
+              <%= current_user.email %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu sub-mennu">
+              <li><a href="#">
+                <i class="fas fa-user"></i>
+                <%= t "pages.header.profile" %>
+                </a></li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fas fa-sign-out-alt"></i>
+                  <%= t("pages.header.logout") %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
 </div>
-

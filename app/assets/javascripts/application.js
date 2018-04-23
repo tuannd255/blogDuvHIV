@@ -87,7 +87,7 @@ $(document).on('turbolinks:load', function() {
 				}
 			})
 
-		} else if (!isUpdate) {
+		} else if (numberTap > 0 && !isUpdate) {
 			$.ajax({
 				url: url,
 				type: method,
