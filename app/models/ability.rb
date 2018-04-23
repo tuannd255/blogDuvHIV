@@ -7,7 +7,10 @@ class Ability
         can :manage, :all
       else
         can :read, :all
-        can [:create, :update], Comment
+        can [:create], Comment
+        can [:update, :destroy], Comment do |comment|
+          user == comment.user
+        end
         can [:create, :update], Clap
       end
     else

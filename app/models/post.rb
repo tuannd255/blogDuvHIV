@@ -3,6 +3,8 @@ class Post < ApplicationRecord
 
 	mount_uploader :image_post, ImageUploader
 
+  enum type_post: {normal: 0, life_story: 1, cooperate: 2}
+
 	has_many :claps, dependent: :destroy
 	has_many :comments, dependent: :destroy
 

@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@recent_posts = Post.random (@post.id)
+		@recent_posts = Post.normal.random (@post.id)
 		@comments = Comment.where(post_id: @post.id).hash_tree(limit_depth: Settings.limit_deep)
 		@popular_posts = Post.populars
 		@comment = @post.comments.new
@@ -61,7 +61,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit :image_post, :title, :content, :category_id, :tag_list
+		params.require(:post).permit :image_post, :title, :content, :category_id, :tag_list, :type
 	end
 
 	def find_post
