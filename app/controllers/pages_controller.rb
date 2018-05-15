@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
- 	def show
+  def show
     @posts = if params[:page].eql? "life_story"
       Post.life_story.page(params[:page]).per Settings.per_page
     elsif params[:page].eql? "cooperate"
@@ -32,5 +32,5 @@ class PagesController < ApplicationController
   private
   def valid_page?
     File.exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:page]}.html.erb"))
-	end
+  end
 end

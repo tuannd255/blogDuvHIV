@@ -2,7 +2,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user
+    # TO DO: Comment and Clap future
+    if user && user.email.eql?("duchv2307@gmail.com")
       if user.isAdmin?
         can :manage, :all
       else

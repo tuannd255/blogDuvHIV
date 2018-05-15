@@ -1,94 +1,76 @@
 <div class="row">
-	<div class="col-md-9">
-		<div class="show-post">
-			<h3 class="title"><%= @post.title %></h3>
-			<div class="information">
+  <div class="col-md-9">
+    <div class="show-post">
+      <h3 class="title"><%= @post.title %></h3>
+      <div class="information">
 
-			</div>
+      </div>
 
-			<div class="image-post">
-				<%= image_tag @post.image_post.large.to_s, class: "image-post-img" %>
-			</div>
-			<div class="time">
-				<i class="far fa-clock"></i>
-				<i><%= time_ago_in_words @post.created_at %> ago</i>
-				- <%= t "posts.types." + @post.type_post %>
-			</div>
+      <div class="image-post">
+        <%= image_tag @post.image_post.large.to_s, class: "image-post-img" %>
+      </div>
+      <div class="time">
+        <i class="far fa-clock"></i>
+        <i><%= time_ago_in_words @post.created_at %> ago</i>
+        - <%= t "posts.types." + @post.type_post %>
+      </div>
 
-			<div class="content markdown">
-				<%= markdown @post.content %>
-			</div>
+      <div class="content markdown">
+        <%= markdown @post.content %>
+      </div>
 
-			<div class="footer clearfix">
-				<div class="network-social">
-					<div class="item">Share this
-						<%= link_to "#", class: "network-item fb" do %>
-								<i class="fab fa-facebook-f"></i>
-							<% end %>
+      <div class="footer clearfix">
+        <div class="network-social">
+          <div class="item">Share this
+            <%= link_to Settings.fb_link, class: "network-item fb" do %>
+              <i class="fab fa-facebook-f"></i>
+            <% end %>
 
-						<%= link_to "#", class: "network-item google" do %>
-								<i class="fab fa-facebook-f"></i>
-							<% end %>
+            <%= link_to Settings.linked_link, class: "network-item linked" do %>
+              <i class="fab fa-linkedin-in"></i>
+            <% end %>
 
-						<%= link_to "#", class: "network-item twitter" do %>
-							<i class="fab fa-facebook-f"></i>
-						<% end %>
+            <%= link_to Settings.github_link, class: "network-item github" do %>
+              <i class="fab fa-github"></i>
+            <% end %>
+          </div>
+        </div>
 
-					</div>
-				</div>
+        <div class="author">
+          by <%= @post.author.try(:email) %>
+        </div>
+      </div>
 
-				<div class="author">
-					by <%= @post.author.try(:email) %>
-				</div>
-			</div>
+      <div class="about-me">
+        <%= link_to "/pages/about" do %>
+          <%= image_tag "logo", class: "logo-about-me" %>
+        <% end %>
+        <div class="slogan">
+          <i><%= t "introduce.slogan" %></i>
+        </div>
 
-			<div class="about-me">
+        <div style="clear: both;"></div>
+      </div>
 
-			</div>
+      <div class="row recent-post">
+        <% @recent_posts.each do |post| %>
+          <div class="col-md-4">
+            <div class="post">
+              <%= link_to post do %>
+                <%= image_tag post.image_post.to_s, class: "image-post-img" %>
+                <%= post.title %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
-			<div class="row recent-post">
-				<% @recent_posts.each do |post| %>
-					<div class="col-md-4">
-						<div class="post">
-							<%= link_to post do %>
-								<%= image_tag post.image_post.to_s, class: "image-post-img" %>
-								<%= post.title %>
-							<% end %>
-						</div>
-					</div>
-				<% end %>
-			</div>
+      <%#= render "comments" %>
+      <%#= render "clap" %>
+    </div>
+  </div>
 
-			<div class="comments">
-				<div class="number-comments">
-					<h3 class="text-center"><%= @post.comments.size %> comment</h3>
-				</div>
-				<div class="render-list-comments">
-					<%= render "comments/comments", comments: @comments %>
-				</div>
-				<% if user_signed_in? %>
-					<%= render "comments/form", parent_id: nil, post_id: @post.id, comment: @comment %>
-				<% end %>
-			</div>
-
-			<div class="clap">
-				<div class="number-clap" data-clapped="<%= @post.number_claps %>">
-					<%= @post.number_claps || 0 %>
-				</div>
-				<div class="form-clap">
-					<% result = get_url_clap post: @post, clap: @clap %>
-					<% if user_signed_in? %>
-						<%= link_to "Clap", "#", remote: true, class: "clap-button",
-							data: {urlPath: result.first, methodAction: result.second} %>
-					<% else %>
-						<%= link_to "Clap", new_user_session_path, class: "clap-button" %>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-3">
-		<%= render "shared/sidebar-menu", popular_posts: @popular_posts %>
-	</div>
+  <div class="col-md-3">
+    <%= render "shared/sidebar-menu", popular_posts: @popular_posts %>
+  </div>
 </div>

@@ -2,16 +2,16 @@
 @import "bootstrap";
 
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: 'Baloo Bhaina', cursive;
+  font-family: 'Baloo Bhaina', cursive;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 #error_explanation {
@@ -26,32 +26,36 @@ a {
 }
 
 .logo {
-	width: 100%;
-	height: 300px;
-	text-align: center;
-	background-color: #dfdfdf;
-	margin: 20px 0;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  background-color: #dfdfdf;
+  margin: 20px 0;
 
-	img {
-		width: auto;
-		height: 100%;
-	}
+  img {
+    width: auto;
+    height: 100%;
+  }
 }
 
 .fb {
-	background-color: #3b5998;
+  background-color: #3b5998;
 }
 
 .google {
-	background-color: #db4a39;
+  background-color: #db4a39;
 }
 
 .twitter {
-	background-color: #00acee;
+  background-color: #00acee;
 }
 
 .github {
-	background-color: black;
+  background-color: black;
+}
+
+.linked {
+  background-color: #283e4a;
 }
 
 
