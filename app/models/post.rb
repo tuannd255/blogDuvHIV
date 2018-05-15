@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
+  extend FriendlyId
+
   acts_as_taggable
+  friendly_id :title, use: :slugged
 
 	mount_uploader :image_post, ImageUploader
 

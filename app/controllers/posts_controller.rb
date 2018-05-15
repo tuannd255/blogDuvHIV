@@ -65,7 +65,7 @@ class PostsController < ApplicationController
   end
 
   def find_post
-    @post = Post.find_by id: params[:id]
+    @post = Post.friendly.find params[:id]
     unless @post
       redirect_to root_path
       flash[:danger] = t "not_found.category"
@@ -73,7 +73,7 @@ class PostsController < ApplicationController
   end
 
   def find_category
-    @category = Category.find_by id: post_params[:category_id] if post_params[:category_id].present?
+    @category = Category.friendly.find post_params[:category_id] if post_params[:category_id].present?
     unless @category
       redirect_to root_path
       flash[:danger] = t "not_found.category"

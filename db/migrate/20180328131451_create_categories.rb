@@ -5,6 +5,7 @@ class CreateCategories < ActiveRecord::Migration[5.1]
       t.string :image_category
       t.string :name
       t.string :description
+      t.string :slug
 
       t.timestamps
     end

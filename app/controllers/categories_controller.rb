@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
   end
 
   def find_category
-    @category = Category.find_by id: params[:id]
+    @category = Category.friendly.find params[:id]
     unless @category
       redirect_to root_path
       flash[:danger] = t "not_found.category"

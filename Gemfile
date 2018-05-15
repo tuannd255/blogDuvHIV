@@ -47,6 +47,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'cancancan', '~> 2.0'
+gem "friendly_id", "~> 5.1.0"
 
 gem "pygments.rb", "~> 0.6.3"
 gem "redcarpet", "~> 3.3", ">= 3.3.4"
