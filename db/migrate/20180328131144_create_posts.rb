@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.text :content
       t.integer :status
       t.integer :type_post, default: 0
+      t.string :slug
 
       t.timestamps
     end

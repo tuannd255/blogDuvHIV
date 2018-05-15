@@ -1,1 +1,2 @@
-user = User.create email: "duchv2307@gmail.com", password: "123123", password_confirmation: "123123", isAdmin: true
+Category.create name: "IOS", description: "IOS và các kiến thức lập trình mobile"
+Category.create name: "Rails", description: "Rails làm nên điều kì diệu. Backend easy"
