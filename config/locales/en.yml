@@ -1,6 +1,8 @@
 en:
   introduce:
     yourself: "Hello everybody. I'm Ha Van Duc. I'm a IOS developer and have ~10 month training Web developer with Rails framework. Now, I'm working in Framgia Inc with role is IOS developer. I often review again my code rails for keep mindset for code web application. Now and later, I will develop for this Blog, which share information and ios and rails's skill for everyone. I hope this blog help for you. Thanks so much!"
+    slogan: "Try hard for code. Sucess will come to you"
+    click_me: "Click to see more information about me! Thanks"
   pages:
     header:
       who_i_am: "Who I'm?"

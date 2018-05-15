@@ -1,61 +1,61 @@
 <div class="sidebar">
-	<div class="about-me">
-		<h2 class="title"><%= t "sidebar.about_me" %></h2>
+  <div class="about-me">
+    <h2 class="title"><%= t "sidebar.about_me" %></h2>
+      <%= link_to "/pages/about", title: t("introduce.click_me") do %>
+        <%= image_tag "logo.jpg", class: "avatar" %>
+      <% end %>
+    <div class="description">
+      <%= t "sidebar.description" %>
+    </div>
+  </div>
 
-		<%= image_tag "logo.jpg",
-			class: "avatar" %>
-		<div class="description">
-			<%= t "sidebar.description" %>
-		</div>
-	</div>
+  <div class="network-social">
+    <h2 class="title">Facebook</h2>
+    <div class="fb-page" data-href="https://www.facebook.com/Ducs-Blogger-1340686746033236/?modal=admin_todo_tour" data-tabs="Bloger ios and rails" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Ducs-Blogger-1340686746033236/?modal=admin_todo_tour" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Ducs-Blogger-1340686746033236/?modal=admin_todo_tour">Duc&#039;s Blogger</a></blockquote></div>
+  </div>
 
-	<div class="network-social">
-		<h2 class="title">Facebook</h2>
-		<div class="fb-page" data-href="https://www.facebook.com/Ducs-Blogger-1340686746033236/?modal=admin_todo_tour" data-tabs="Bloger ios and rails" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Ducs-Blogger-1340686746033236/?modal=admin_todo_tour" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Ducs-Blogger-1340686746033236/?modal=admin_todo_tour">Duc&#039;s Blogger</a></blockquote></div>
-	</div>
+<!--  <div class="follow">
+  <h2 class="title">Follow us</h2>
+    <div class="item">
+      <div class="icon">
 
-<!-- 	<div class="follow">
-	<h2 class="title">Follow us</h2>
-		<div class="item">
-			<div class="icon">
+      </div>
 
-			</div>
+    </div>
 
-		</div>
+  </div> -->
 
-	</div> -->
+  <div class="popular-post">
+    <h2 class="title">Popular posts</h2>
+    <% @popular_posts.each do |post| %>
+      <div class="post">
+        <%= link_to post do %>
+          <div class="avatar">
+            <%= image_tag post.image_post.avatar_cricle.to_s %>
+          </div>
 
-	<div class="popular-post">
-		<h2 class="title">Popular posts</h2>
-		<% @popular_posts.each do |post| %>
-			<div class="post">
-				<%= link_to post do %>
-					<div class="avatar">
-						<%= image_tag post.image_post.avatar_cricle.to_s %>
-					</div>
+          <div class="title">
+            <%= post.title %>
+          </div>
 
-					<div class="title">
-						<%= post.title %>
-					</div>
+        <% end %>
+        <div style="clear: both;"></div>
+      </div>
+    <% end %>
+  </div>
 
-				<% end %>
-				<div style="clear: both;"></div>
-			</div>
-		<% end %>
-	</div>
+  <div class="tags">
+    <h2 class="title">Tags</h2>
 
-	<div class="tags">
-		<h2 class="title">Tags</h2>
+    <% tags.each do |tag| %>
+      <div class="tag">
+        <%= link_to tag, class: "tag-link" do %>
+          <%= tag %>
+        <% end %>
+        <div class="number_tag"><%= tag_count_post(tag) %></div>
+      </div>
+    <% end %>
 
-		<% tags.each do |tag| %>
-			<div class="tag">
-				<%= link_to tag, class: "tag-link" do %>
-					<%= tag %>
-				<% end %>
-				<div class="number_tag"><%= tag_count_post(tag) %></div>
-			</div>
-		<% end %>
-
-		<div style="clear: both;"></div>
-	</div>
+    <div style="clear: both;"></div>
+  </div>
 </div>

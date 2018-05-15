@@ -1,38 +1,38 @@
 .list-comments {
-	.avatar-image {
-		width: 45px;
-		height: 45px;
-		display: block;
-		border-radius: 50%;
-		border: 1px solid #dfdfdf;
-	}
+  .avatar-image {
+    width: 45px;
+    height: 45px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #dfdfdf;
+  }
 
-	.comment, .sub-comment {
-		margin: 10px 0;
-		padding: 10px 0;
-		border-bottom: 1px solid #dfdfdf;
+  .comment, .sub-comment {
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #dfdfdf;
 
-		&:last-child {
-			border-bottom: none;
-		}
-	}
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 
-	.sub-comment {
-		border-top: 1px solid #dfdfdf;
-	}
+  .sub-comment {
+    border-top: 1px solid #dfdfdf;
+  }
 }
 
 .comments {
-	.number-comments {
-		margin-top: 10px;
-		border-top: 1px solid #dfdfdf;
-	}
+  .number-comments {
+    margin-top: 10px;
+    border-top: 1px solid #dfdfdf;
+  }
 
-	.input-comment-group {
-		width: 80% !important;
-	}
+  .input-comment-group {
+    width: 80% !important;
+  }
 
-	.input-comment {
-		width: 100%;
-	}
+  .input-comment {
+    width: 100%;
+  }
 }

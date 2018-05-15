@@ -1,0 +1,14 @@
+<div class="clap">
+  <div class="number-clap" data-clapped="<%= @post.number_claps %>">
+    <%= @post.number_claps || 0 %>
+  </div>
+  <div class="form-clap">
+    <% result = get_url_clap post: @post, clap: @clap %>
+    <% if user_signed_in? %>
+      <%= link_to "Clap", "#", remote: true, class: "clap-button",
+        data: {urlPath: result.first, methodAction: result.second} %>
+    <% else %>
+      <%= link_to "Clap", new_user_session_path, class: "clap-button" %>
+    <% end %>
+  </div>
+</div>

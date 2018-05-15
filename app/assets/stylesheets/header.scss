@@ -2,110 +2,110 @@
 
 #menu {
 
-	.image-profile {
-		width: 20px;
-		height: 20px;
-		border-radius: 100%;
-	}
+  .image-profile {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+  }
 
-	.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-		background-color: #3f77bb;
-	}
+  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #3f77bb;
+  }
 
-	.navbar-custom {
-		background-color: #5488c7;
-	}
+  .navbar-custom {
+    background-color: #5488c7;
+  }
 
-	li {
-		color: #fffb0a;
-		min-height: 30px;
-	}
+  li {
+    color: #fffb0a;
+    min-height: 30px;
+  }
 
-	.dropdown:hover .sub-mennu {
-		display: block;
-	}
+  .dropdown:hover .sub-mennu {
+    display: block;
+  }
 
-	a {
-	  text-decoration: none;
-	  color: white;
-	  display: block;
+  a {
+    text-decoration: none;
+    color: white;
+    display: block;
 
-	  &:hover {
-		  background: #3f77bb;
-		  color: white;
-		}
-	}
+    &:hover {
+      background: #3f77bb;
+      color: white;
+    }
+  }
 
-	.sub-mennu {
-		background-color: #5488c7;
-		li {
-			a {
-		  	color: white;
-		  }
+  .sub-mennu {
+    background-color: #5488c7;
+    li {
+      a {
+        color: white;
+      }
 
-		  a:hover {
-		  	color: white;
-		  	background-color: #3f77bb;
-		  }
-		}
-	}
+      a:hover {
+        color: white;
+        background-color: #3f77bb;
+      }
+    }
+  }
 }
 
 // Draf header
 // #menu {
-// 	ul {
-// 	  background: #5488c7;
-// 	  list-style-type: none;
-// 	  text-align: center;
-// 	  z-index: 999;
-// 	  color: white;
-// 	}
+//  ul {
+//    background: #5488c7;
+//    list-style-type: none;
+//    text-align: center;
+//    z-index: 999;
+//    color: white;
+//  }
 
-// 	li {
-// 	  color: #fffb0a;
-// 	  display: inline-block;
-// 	  width: 120px;
-// 	  height: 50px;
-// 	  line-height: 50px;
-// 	  margin-left: -5px;
-// 	  position: relative;
+//  li {
+//    color: #fffb0a;
+//    display: inline-block;
+//    width: 120px;
+//    height: 50px;
+//    line-height: 50px;
+//    margin-left: -5px;
+//    position: relative;
 
-// 	  &:hover .sub-menu {
-// 		  display: block;
-// 		}
-// 	}
+//    &:hover .sub-menu {
+//      display: block;
+//    }
+//  }
 
-	// a {
-	//   text-decoration: none;
-	//   color: white;
-	//   display: block;
+  // a {
+  //   text-decoration: none;
+  //   color: white;
+  //   display: block;
 
-	//   &:hover {
-	// 	  background: #3f77bb;
-	// 	  color: white;
-	// 	}
-	// }
+  //   &:hover {
+  //    background: #3f77bb;
+  //    color: white;
+  //  }
+  // }
 
-// 	/*==Dropdown Menu==*/
-// 	.sub-menu {
-// 	  display: none;
-// 	  position: absolute;
+//  /*==Dropdown Menu==*/
+//  .sub-menu {
+//    display: none;
+//    position: absolute;
 
-// 	  li.sub-menu-item {
-// 	  	background-color: #5488c7;
-// 		  margin-left: 0 !important;
-// 		  text-transform: uppercase;
+//    li.sub-menu-item {
+//      background-color: #5488c7;
+//      margin-left: 0 !important;
+//      text-transform: uppercase;
 
-// 		  a {
-// 		  	color: white;
-// 		  }
+//      a {
+//        color: white;
+//      }
 
-// 		  a:hover {
-// 		  	color: white;
-// 		  	background-color: #3f77bb;
-// 		  }
-// 		}
-// 	}
+//      a:hover {
+//        color: white;
+//        background-color: #3f77bb;
+//      }
+//    }
+//  }
 // }
 
 // /*==Menu cấp 3==*/
