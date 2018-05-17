@@ -22,3 +22,15 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+ReactOnRails
+bundle
+bundle exec rails webpacker:install
+bundle exec rails webpacker:install:react
+
+add commit github and out termial
+
+rails generate react_on_rails:install
+
+foreman start -f Procfile.dev
