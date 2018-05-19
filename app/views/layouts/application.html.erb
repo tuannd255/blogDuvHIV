@@ -8,21 +8,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Andika|Baloo+Bhaina|Playfair+Display" rel="stylesheet">
+    <%= javascript_pack_tag 'index' %>
   </head>
 
   <body>
-    <%= render "shared/header" %>
+    <%#= render "shared/header" %>
     <div class="row">
       <div class="container">
-        <div style="min-height: 80vh">
-          <% flash.each do |message_type, message| %>
-            <div class="alert alert-<%= message_type %>"> <%= message %> </div>
-          <% end %>
-          <%= yield %>
+        <div id="root">
         </div>
+
+       <!--  <div style="min-height: 80vh">
+          <%# flash.each do |message_type, message| %>
+            <div class="alert alert-<%#= message_type %>"> <%#= message %> </div>
+          <%# end %>
+          <%#= yield %>
+        </div> -->
       </div>
     </div>
-    <%= render "shared/footer" %>
+    <%#= render "shared/footer" %>
   </body>
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
