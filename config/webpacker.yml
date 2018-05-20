@@ -1,8 +1,8 @@
 # Note: You must restart bin/webpack-dev-server for changes to take effect
 
 default: &default
-  source_path: app/clients
-  source_entry_path: 'index.js'
+  source_path: './'
+  source_entry_path: clients
   public_output_path: packs
   cache_path: tmp/cache/webpacker
 

@@ -15,11 +15,13 @@ Rails.application.routes.draw do
   #   sessions: "api/v1/sessions"
   # }
 
-  namespace :api do
+  namespace :api, {format: "json"} do
     namespace :v1 do
       post 'sign_in', to: 'sessions#create'
       delete 'sign_out', to: 'sessions#destroy'
       resources :users
     end
   end
+  get "*path", to: "application#root"
+  get "*not_found", to: "application#routing_error"
 end
