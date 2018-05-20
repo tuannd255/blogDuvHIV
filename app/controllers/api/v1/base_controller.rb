@@ -8,8 +8,14 @@ class Api::V1::BaseController < ApplicationController
 
   before_action :authenticate_request!
 
+  skip_before_action :verify_authenticity_token
+
   def not_found
     render file: "public/404.html", status: :not_found
+  end
+
+  def routing_error
+    raise ActionController::RoutingError, params[:not_found]
   end
 
   protected

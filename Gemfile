@@ -52,7 +52,8 @@ gem "pygments.rb", "~> 0.6.3"
 gem "redcarpet", "~> 3.3", ">= 3.3.4"
 gem "simplemde-rails"
 gem "webpacker", "~> 3.5"
-gem 'jwt'
+gem "jwt"
+gem "rack-cors", require: "rack/cors"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
