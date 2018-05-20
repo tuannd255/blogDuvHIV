@@ -33,7 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [840, 300]
   end
 
-  version :avatar_cricle do
+  version :thumb do
     process resize_to_fit: [80, 80]
   end
 

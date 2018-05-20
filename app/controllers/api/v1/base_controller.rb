@@ -21,12 +21,13 @@ class Api::V1::BaseController < ApplicationController
   protected
 
   def authenticate_request!
-    user = User.find_by id: decode_auth_token[:user_id], auth_token: http_token
-    unless user_id_in_token? && JsonWebToken.valid_payload(decode_auth_token) && user.present?
+    unless user_id_in_token? && JsonWebToken.valid_payload(decode_auth_token)
       render json: {errors: ["Not Authenticated"]}, status: :unauthorized
       return
     end
-
+    user = User.find_by id: decode_auth_token[:user_id], auth_token: http_token
+    render json: {errors: ["Token is invalid"]}, status: :unauthorized unless user.present?
+    return
     @current_user = user
   rescue JWT::VerificationError, JWT::DecodeError
     render json: { errors: ["Not Authenticated"] }, status: :unauthorized
@@ -44,7 +45,7 @@ class Api::V1::BaseController < ApplicationController
     render json: { error: t("api.errors.record_not_unique") }.to_json, status: 400
   end
 
-  rescue_from CanCan::AccessDenied do |exception|
+  rescue_from CanCan::AccessDenied do |e|
     redirect_to root_path
     flash[:danger] = "You not permission"
   end
