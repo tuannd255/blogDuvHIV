@@ -6,7 +6,8 @@ import { Provider } from 'react-redux'
 import configureStore from './stores/store'
 import { ThroughProvider } from 'react-through'
 import Main from './components/Main.react'
-import Login from './components/Login.react'
+import LoginPage from './components/LoginPage.react'
+import FlashMessages from './components/FlashMessages'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-select/dist/react-select.css'
@@ -22,9 +23,10 @@ const App = (
     <ThroughProvider>
       <Router history={createBrowserHistory()}>
         <div className="page-wrapper">
+          <FlashMessages />
           <Switch>
             <Route path="/" component={Main} exact />
-            <Route path="/login" component={Login} exact />
+            <Route path="/login" component={LoginPage} exact />
           </Switch>
         </div>
       </Router>
