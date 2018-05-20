@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+
+  before_action :authenticate_request!
+
   def show
     @posts = if params[:page].eql? "life_story"
       Post.life_story.page(params[:page]).per Settings.per_page
