@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   skip_authorize_resource only: %i(index show)
   before_action :find_post, only: %i(edit update destroy show)
   before_action :find_category, only: %i(create update)
