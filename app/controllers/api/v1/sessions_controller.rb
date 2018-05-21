@@ -18,7 +18,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
         }
       }, status: 200
     else
-      render json: { status: 200 }
+      head 404
     end
   end
 

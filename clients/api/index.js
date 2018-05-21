@@ -1,17 +1,21 @@
 import axios from 'axios'
+import * as Routes from '../constants/Routes'
+import * as ConstantConfig from '../constants/AppConfig'
+
 const CancelToken = axios.CancelToken
 const source = CancelToken.source()
 
-const BASE_URL = 'http://localhost:3000/api/v1/'
-const TOKEN_KEY = 'AUTH_TOKEN'
-const HEADER_TOKEN_KEY = 'Authorization'
-
 const instance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: Routes.BASE_URL,
   withCredentials: true,
   cancelToken: source.token
 })
 
+instance.interceptors.request.use((config) => {
+  let auth_token = localStorage.getItem(ConstantConfig.TOKEN_KEY)
+  config.headers.common[ConstantConfig.HEADER_TOKEN_KEY] = auth_token;
+  return config
+})
 
 function get(url, params = {}) {
   return instance.get(url, params).then(response => {
@@ -44,5 +48,9 @@ function sendPost(url, data) {
 }
 
 export function login(session) {
-  return sendPost('/sign_in', { session })
+  return sendPost(Routes.SIGN_IN, { session })
+}
+
+export function logout() {
+  return sendDelete(Routes.SIGN_OUT)
 }
