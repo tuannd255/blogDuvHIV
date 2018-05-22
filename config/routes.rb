@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post "sign_in", to: "sessions#create"
       delete "sign_out", to: "sessions#destroy"
       resources :users
+      resources :posts
       match "*not_found", to: "base#routing_error", via: [:get, :post, :patch, :put, :delete]
     end
   end
