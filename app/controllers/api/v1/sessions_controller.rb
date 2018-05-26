@@ -3,7 +3,6 @@ class Api::V1::SessionsController < Api::V1::BaseController
 
   def create
     user = User.find_by email: user_params[:email].to_s.downcase
-
     if user&.authenticate user_params[:password]
       auth_token = JsonWebToken.encode({user_id: user.id})
       user.update_attributes auth_token: auth_token
@@ -23,7 +22,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
   end
 
   def destroy
-    if current_user.update_attributes auth_token: nil
+    if @current_user.update_attributes auth_token: nil
       head 204
     else
       render json: {errors: ["logout failure"]}

@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 
 export default class Flash extends Component {
   componentDidMount() {
-    // setTimeout(this.handleClose, 3000);
+    setTimeout(this.handleClose, 3000);
   }
 
   handleClose = () => this.props.removeFlashMessage(this.props.message.id);

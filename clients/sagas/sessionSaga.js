@@ -12,27 +12,29 @@ import {
 
 export function* handleLogin(action) {
   try {
-    yield put(addSuccessMessage("ecec"))
     const payload = yield call(api.login, action.payload)
-    slocalStorage.setItem(ConstantConfig.TOKEN_KEY, token)
-    history.push("/")
     yield put(actions.loginSuccess(payload.user))
+    yield put(addSuccessMessage('login success'))
+    localStorage.setItem(ConstantConfig.TOKEN_KEY, payload.auth_token)
+    history.push('/posts')
   } catch (e) {
-    yield put(actions.loginFail(payload))
-    history.push("/login")
+    yield put(addWarningMessage('loginFail'))
+    yield put(actions.loginFail())
     console.log(e)
   }
 }
 
 export function* handleLogout(action) {
   try {
-    const payload = yield call(api.logout, action.payload)
+    const payload = yield call(api.logout)
+    yield put(addSuccessMessage('logout success'))
     localStorage.removeItem(ConstantConfig.TOKEN_KEY)
-    history.push("/home_page")
+    history.push('/home_page')
     yield put(actions.logoutSuccess(payload))
   } catch (e) {
-    yield put(actions.logoutFail(payload))
-    history.push("/")
+    yield put(addWarningMessage('loginFail'))
+    yield put(actions.logoutFail())
+    history.push('/')
     console.log(e)
   }
 }

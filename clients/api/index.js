@@ -4,11 +4,15 @@ import * as ConstantConfig from '../constants/AppConfig'
 
 const CancelToken = axios.CancelToken
 const source = CancelToken.source()
+const _auth_cookie = localStorage.AUTH_TOKEN
 
 const instance = axios.create({
   baseURL: Routes.BASE_URL,
   withCredentials: true,
-  cancelToken: source.token
+  cancelToken: source.token,
+  headers: {
+    Authorization: _auth_cookie
+  }
 })
 
 instance.interceptors.request.use((config) => {
