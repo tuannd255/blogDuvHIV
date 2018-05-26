@@ -27,8 +27,8 @@ class Api::V1::BaseController < ApplicationController
     end
     user = User.find_by id: decode_auth_token[:user_id], auth_token: http_token
     render json: {errors: ["Token is invalid"]}, status: :unauthorized unless user.present?
-    return
     @current_user = user
+    return
   rescue JWT::VerificationError, JWT::DecodeError
     render json: { errors: ["Not Authenticated"] }, status: :unauthorized
   end

@@ -12,6 +12,7 @@ import FlashMessages from './components/FlashMessages'
 import PrivateRoute from './customs/PrivateRoute'
 import PublicRoute from './customs/PublicRoute'
 import HomePage from './components/HomePage/HomePage.react'
+import Posts from './components/Posts/Posts.react'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-select/dist/react-select.css'
@@ -31,6 +32,7 @@ const App = (
           <Switch>
             <PrivateRoute path="/" component={HomePage} exact />
             <Route path="/home_page" component={Main} exact />
+            <Route path="/posts" component={Posts} exact />
             <PublicRoute path="/login" component={LoginPage} exact />
           </Switch>
         </div>
