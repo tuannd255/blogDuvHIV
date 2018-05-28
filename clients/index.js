@@ -14,6 +14,10 @@ import PublicRoute from './customs/PublicRoute'
 import HomePage from './components/HomePage/HomePage.react'
 import Posts from './components/Posts/Posts.react'
 
+import Header from './components/Layouts/Header.react'
+import Menu from './components/Layouts/Menu.react'
+import Footer from './components/Layouts/Footer.react'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-select/dist/react-select.css'
 import 'font-awesome/css/font-awesome.min.css'
@@ -27,14 +31,27 @@ const App = (
   <Provider store={configureStore()}>
     <ThroughProvider>
       <Router history={history}>
-        <div className="page-wrapper">
-          <FlashMessages />
-          <Switch>
-            <PrivateRoute path="/" component={HomePage} exact />
-            <Route path="/home_page" component={Main} exact />
-            <Route path="/posts" component={Posts} exact />
-            <PublicRoute path="/login" component={LoginPage} exact />
-          </Switch>
+        <div>
+          <div className="page-wrapper">
+            <div className="container">
+              <Header />
+              <Menu />
+            </div>
+            <Switch>
+              <main role="main" class="container">
+                <FlashMessages />
+                <div class="row">
+                  <PrivateRoute path="/" component={HomePage} exact />
+                  <Route path="/home_page" component={Main} exact />
+                  <Route path="/posts" component={Posts} exact />
+                  <PublicRoute path="/login" component={LoginPage} exact />
+                  <div class="col-md-8 blog-main">
+                  </div>
+                </div>
+              </main>
+            </Switch>
+          </div>
+          <Footer />
         </div>
       </Router>
     </ThroughProvider>

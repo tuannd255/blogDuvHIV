@@ -58,3 +58,7 @@ export function login(session) {
 export function logout() {
   return sendDelete(Routes.SIGN_OUT)
 }
+
+export function getPosts() {
+  return get(Routes.POSTS)
+}
