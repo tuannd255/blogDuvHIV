@@ -4,12 +4,14 @@ import { routerReducer } from 'react-router-redux'
 
 import session from '../ducks/session'
 import flashMessages from '../ducks/flashMessages'
+import post from '../ducks/post'
 
 const appReducer = combineReducers({
   form,
   routing: routerReducer,
   session,
-  flashMessages
+  flashMessages,
+  post
 })
 
 const rootReducer = (state, action) => {
