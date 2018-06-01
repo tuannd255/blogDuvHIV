@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import LoginBtn from './LoginBtn.react'
+import { isLogin } from '../../helpers/Helpers'
+import LogoutBtn from './LogoutBtn.react'
 
 class Header extends Component {
   render() {
@@ -20,6 +24,7 @@ class Header extends Component {
                <line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
             </a>
             <a className="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+            {isLogin() ? <LogoutBtn /> : <LoginBtn />}
           </div>
         </div>
       </header>

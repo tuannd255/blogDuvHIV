@@ -4,20 +4,16 @@ import * as ConstantConfig from '../constants/AppConfig'
 
 const CancelToken = axios.CancelToken
 const source = CancelToken.source()
-const _auth_cookie = localStorage.AUTH_TOKEN
 
 const instance = axios.create({
   baseURL: Routes.BASE_URL,
   withCredentials: true,
-  cancelToken: source.token,
-  headers: {
-    Authorization: _auth_cookie
-  }
+  cancelToken: source.token
 })
 
 instance.interceptors.request.use((config) => {
-  let auth_token = localStorage.getItem(ConstantConfig.TOKEN_KEY)
-  config.headers.common[ConstantConfig.HEADER_TOKEN_KEY] = auth_token;
+  const auth_token = localStorage.getItem(ConstantConfig.TOKEN_KEY)
+  config.headers.common[ConstantConfig.HEADER_TOKEN_KEY] = auth_token
   return config
 })
 
@@ -59,6 +55,6 @@ export function logout() {
   return sendDelete(Routes.SIGN_OUT)
 }
 
-export function getPosts() {
-  return get(Routes.POSTS)
+export function getPosts(params) {
+  return get(Routes.POSTS, { params })
 }

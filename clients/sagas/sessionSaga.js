@@ -18,7 +18,7 @@ export function* handleLogin(action) {
     localStorage.setItem(ConstantConfig.TOKEN_KEY, payload.auth_token)
     history.push('/posts')
   } catch (e) {
-    yield put(addWarningMessage('loginFail'))
+    yield put(addWarningMessage('login fail'))
     yield put(actions.loginFail())
     console.log(e)
   }
@@ -32,7 +32,7 @@ export function* handleLogout(action) {
     history.push('/home_page')
     yield put(actions.logoutSuccess(payload))
   } catch (e) {
-    yield put(addWarningMessage('loginFail'))
+    yield put(addWarningMessage('logout fail'))
     yield put(actions.logoutFail())
     history.push('/')
     console.log(e)

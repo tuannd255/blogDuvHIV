@@ -4,14 +4,15 @@ class Api::V1::PostsController < Api::V1::BaseController
 
   def index
     page = params[:page].to_i
-    per_page = params[:page].to_i > 0 ? params[:per_page].to_i : Settings.per_page
+    per_page = params[:per_page].to_i > 0 ? params[:per_page].to_i : Settings.per_page
     @posts = Post.all.page(page).per per_page
-    data = @posts.map { |post| payload(post)  }
+    data = @posts.map { |post| payload(post) }
     render json: {
       total_posts: @posts.size,
       page: page,
       per_page: per_page,
-      posts: data
+      posts: data,
+      total_pages: @posts.total_pages
     }, status: 200
   end
 
@@ -61,7 +62,7 @@ class Api::V1::PostsController < Api::V1::BaseController
       updated_at: post.updated_at
     }
     author = post.author
-    if author&.present?
+    if author
       postJSON[:author] = {
         id: author.id,
         name: author.name,
@@ -70,7 +71,7 @@ class Api::V1::PostsController < Api::V1::BaseController
       }
     end
     category = post.category
-    if category&.present?
+    if category
       postJSON[:category] = {
         id: category.id,
         name: category.name

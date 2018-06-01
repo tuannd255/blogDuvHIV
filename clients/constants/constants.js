@@ -9,7 +9,8 @@ const Constants = KeyMirror({
   LOGOUT_FAIL: null,
   GET_POSTS: null,
   GET_POSTS_SUCCESS: null,
-  GET_POSTS_FAIL: null
+  GET_POSTS_FAIL: null,
+  UPDATE_PAGE_POST: null
 })
 
 export default Constants

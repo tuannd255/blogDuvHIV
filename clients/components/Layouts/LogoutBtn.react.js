@@ -1,12 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../../ducks/session'
+import { Button } from 'reactstrap'
 
-class HomePage extends React.Component {
+class LogoutBtn extends React.Component {
   render() {
     return (
       <div>
-        <input type="button" onClick={e => this.props.logout()} value="logout" />
+        <Button onClick={this.props.logout} className="ml-3">
+          Logout
+        </Button>
       </div>
     )
   }
@@ -16,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 })
 
-export default connect(null, mapDispatchToProps)(HomePage)
+export default connect(null, mapDispatchToProps)(LogoutBtn)
